@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Coming Soon</title>
+        <style>
+            @import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+
+            * {
+                box-sizing: border-box;
+                padding: 0;
+                margin: 0;
+            }
+
+            body {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                background-color: black;
+                width: 100vw;
+                height: 100vh;
+            }
+
+            h1 {
+                position: relative;
+                color: #666;
+                word-break: break-word;
+                font-weight: 400;
+                font-style: italic;
+                display: inline-block;
+                margin: 0px;
+                font-size: 144px;
+            }
+
+            .title-wrapper {
+                display: inline-block;
+            }
+            h1::after {
+                color: #f2f2f2;
+                position: absolute;
+                top: 0;
+                left: 0;
+                display: inline-block;
+                overflow: hidden;
+                width: 0%;
+                white-space: pre;
+                word-break: normal;
+                content: attr(data-text);
+                transition-timing-function: cubic-bezier(
+                    0.39,
+                    0.13,
+                    0.55,
+                    0.88
+                );
+                transition-duration: 0.7s;
+                transition-property: width;
+                will-change: width;
+                z-index: 99;
+            }
+            .title-wrapper:hover h1::after {
+                width: 100%;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="title-wrapper">
+            <h1 data-text="Coming Soon.">Coming Soon.</h1>
+        </div>
+    </body>
+</html>
